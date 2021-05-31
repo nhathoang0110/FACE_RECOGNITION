@@ -7,18 +7,18 @@ from utils.box_utils import crop_img, _load
 
 
 class TDDFA_OPENVINO(object):
-    def __init__(self):
+    def __init__(self,path_to_folder):
         # config
         self.size = 120
 
-        model_bin = "model_headpose/mb05_120x120.bin"
-        model_xml="model_headpose/mb05_120x120.xml"
+        model_bin = path_to_folder+"mb05_120x120.bin"
+        model_xml=path_to_folder+"mb05_120x120.xml"
         net=IECore().read_network(model_xml, model_bin)
         self.input_blob = next(iter(net.input_info))
         self.exec_net = IECore().load_network(network=net,device_name='CPU', num_requests=1)
 
         # params normalization config
-        r = _load("model_headpose/param_mean_std_62d_120x120.pkl")
+        r = _load(path_to_folder+"param_mean_std_62d_120x120.pkl")
         self.param_mean = r.get('mean')
         self.param_std = r.get('std')
 

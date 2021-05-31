@@ -16,7 +16,7 @@ import json
 import schedule
 import os
 
-def run(flag,type_cam,path_detection,path_vectori,folder_vector):
+def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector):
     time_now=datetime.datetime.now()
     day_now= str(time_now.day)+"_"+str(time_now.month)
     if not os.path.exists("image_to_debug/"+day_now):
@@ -26,7 +26,7 @@ def run(flag,type_cam,path_detection,path_vectori,folder_vector):
     tracker = Sort()
     #det=RetinaFace('model_detection_2021/FaceDetector.xml','CPU')
     face_detector = FaceDetector(path_detection, 0.6, 'CPU')
-    tddfa = TDDFA_OPENVINO()     
+    tddfa = TDDFA_OPENVINO(path_to_headpose)     
     vectori= Vectorization(path_vectori)
     gallery,gallery_id=vectori.build_gallery(folder_vector)
     matching_model= Matching(type_cam,0.4,0.44,0.6,gallery,gallery_id)
@@ -65,16 +65,7 @@ def run(flag,type_cam,path_detection,path_vectori,folder_vector):
                 if(abs(pose[j][0])<30):
                     dets.append(dets1[j])
             for b in dets:
-                #text = "{:.4f}".format(b[4])
                 b = list(map(int, b))
-                # box1=frame_use[b[1]:b[3], b[0]:b[2]]
-                # if not not box1.all():
-                #     fake_real=anti_classify(box1)
-                #     print(fake_real[0],fake_real[1])
-                #     if(fake_real[0]=="fake"):
-                #         continue
-                # cv2.rectangle(frame, (b[0], b[1]), (b[2], b[3]), (0, 0, 255), 2)
-                # box = frame[b[1]:b[3], b[0]:b[2]]
                 det_track.append((b[0], b[1], b[2], b[3],1))
             #tracking 
             predict,dead_track=tracker.update(np.array(det_track))
@@ -149,10 +140,10 @@ if __name__ == '__main__':
     path_detection="model_detection_2021/face-detection-0204.xml"
     path_vectori="model_vectori/face_v2_16.xml"
     folder_vector="database/vectors/"
+    path_to_headpose="model_headpose/"
     flag=0 # 0 is morning 1 is afternoon
     type_cam=0  # 0 is front, 1 is high camera
-    
-    run(flag,type_cam,path_detection,path_vectori,folder_vector)
+    run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
 
 
     # def job():
@@ -167,7 +158,7 @@ if __name__ == '__main__':
     #             break
     #     cap.release()
     #     cv2.destroyAllWindows()
-    # #schedule.every(3).minutes.do(job)
+    #schedule.every(3).minutes.do(job)
     # schedule.every().day.at("04:14").do(run,flag,path_detection,path_vectori,folder_vector)
     # while True:
     #     schedule.run_pending()

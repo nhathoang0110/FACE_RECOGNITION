@@ -25,6 +25,14 @@ class Vectorization(object):
         res=res[0]
         res=np.reshape(res,res.shape[0:1])
         return res
+    def extract_vector_gallery(self, img):
+        in_frame = cv2.resize(img, (self.w,self.h))
+        in_frame = in_frame.transpose((2, 0, 1))
+        in_frame = in_frame.reshape(self.n, self.c, self.h, self.w)
+        res = self.exec_net.infer(inputs={self.input_blob: in_frame})
+        res = res[self.output_blob]
+        res=res[0]
+        return res
     def build_gallery(self,folder_vector):
         names=[]
         vectors=[]
