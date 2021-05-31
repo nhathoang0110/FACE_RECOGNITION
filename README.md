@@ -13,6 +13,7 @@
     +) results là folder chứa kết quả của chấm công của công ty theo mỗi ngày. Mỗi ngày sẽ có 2 file morning và afternoon.
 
 +) truyền vào hàm run:
+
     +) path_detection là link tới model detection
 
     +) path_vectori là link tới model vectori
