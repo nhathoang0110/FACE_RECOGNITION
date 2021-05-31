@@ -64,6 +64,6 @@ def make_gallery(name):
     file1.close()
 
 if __name__ == '__main__':
-    name="tien"
+    name="hung"
     make_gallery(name=name)
 

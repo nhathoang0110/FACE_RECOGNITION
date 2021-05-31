@@ -1,0 +1,347 @@
+<?xml version="1.0" ?>
+<mapping>
+	<map>
+		<framework name="105" out_port_id="105"/>
+		<IR id="128" name="Conv_48" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="92" out_port_id="92"/>
+		<IR id="94" name="Relu_35" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="63" out_port_id="63"/>
+		<IR id="23" name="Conv_6" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="95" out_port_id="95"/>
+		<IR id="103" name="Conv_38" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="60" out_port_id="60"/>
+		<IR id="14" name="Relu_3" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="119" out_port_id="119"/>
+		<IR id="143" name="Reshape_60" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="103" out_port_id="103"/>
+		<IR id="123" name="Conv_46" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="input" out_port_id="input"/>
+		<IR id="4" name="Add_/Fused_Add_" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw3_2.conv_dw.weight" out_port_id="dw3_2.conv_dw.weight"/>
+		<IR id="40" name="40984101_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="conv1.weight" out_port_id="conv1.weight"/>
+		<IR id="5" name="onnx_initializer_node_conv1.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="100" out_port_id="100"/>
+		<IR id="114" name="Relu_43" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="107" out_port_id="107"/>
+		<IR id="133" name="Conv_50" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="98" out_port_id="98"/>
+		<IR id="109" name="Relu_41" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw2_1.conv_sep.weight" out_port_id="dw2_1.conv_sep.weight"/>
+		<IR id="15" name="onnx_initializer_node_dw2_1.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="87" out_port_id="87"/>
+		<IR id="83" name="Conv_30" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="77" out_port_id="77"/>
+		<IR id="58" name="Conv_20" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_1.conv_dw.weight" out_port_id="dw5_1.conv_dw.weight"/>
+		<IR id="70" name="41064109_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="61" out_port_id="61"/>
+		<IR id="18" name="Conv_4" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw4_2.conv_dw.weight" out_port_id="dw4_2.conv_dw.weight"/>
+		<IR id="60" name="41344137_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw3_1.conv_dw.weight" out_port_id="dw3_1.conv_dw.weight"/>
+		<IR id="30" name="41264129_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="66" out_port_id="66"/>
+		<IR id="29" name="Relu_9" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw3_2.conv_sep.weight" out_port_id="dw3_2.conv_sep.weight"/>
+		<IR id="45" name="onnx_initializer_node_dw3_2.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="58" out_port_id="58"/>
+		<IR id="9" name="Relu_1" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw5_4.conv_dw.weight" out_port_id="dw5_4.conv_dw.weight"/>
+		<IR id="100" name="40904093_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="111" out_port_id="111"/>
+		<IR id="141" name="GlobalAveragePool_54/reduce" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="104" out_port_id="104"/>
+		<IR id="124" name="Relu_47" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="75" out_port_id="75"/>
+		<IR id="53" name="Conv_18" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="78" out_port_id="78"/>
+		<IR id="59" name="Relu_21" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="91" out_port_id="91"/>
+		<IR id="93" name="Conv_34" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_5.conv_sep.weight" out_port_id="dw5_5.conv_sep.weight"/>
+		<IR id="115" name="onnx_initializer_node_dw5_5.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="74" out_port_id="74"/>
+		<IR id="49" name="Relu_17" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw5_6.conv_dw.weight" out_port_id="dw5_6.conv_dw.weight"/>
+		<IR id="120" name="41144117_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw5_2.conv_dw.weight" out_port_id="dw5_2.conv_dw.weight"/>
+		<IR id="80" name="41384141_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="94" out_port_id="94"/>
+		<IR id="99" name="Relu_37" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="67" out_port_id="67"/>
+		<IR id="33" name="Conv_10" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="89" out_port_id="89"/>
+		<IR id="88" name="Conv_32" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw3_1.conv_sep.weight" out_port_id="dw3_1.conv_sep.weight"/>
+		<IR id="35" name="onnx_initializer_node_dw3_1.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="71" out_port_id="71"/>
+		<IR id="43" name="Conv_14" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_3.conv_sep.weight" out_port_id="dw5_3.conv_sep.weight"/>
+		<IR id="95" name="onnx_initializer_node_dw5_3.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="108" out_port_id="108"/>
+		<IR id="134" name="Relu_51" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="99" out_port_id="99"/>
+		<IR id="113" name="Conv_42" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="93" out_port_id="93"/>
+		<IR id="98" name="Conv_36" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_2.conv_sep.weight" out_port_id="dw5_2.conv_sep.weight"/>
+		<IR id="85" name="onnx_initializer_node_dw5_2.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="80" out_port_id="80"/>
+		<IR id="64" name="Relu_23" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="90" out_port_id="90"/>
+		<IR id="89" name="Relu_33" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="76" out_port_id="76"/>
+		<IR id="54" name="Relu_19" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="96" out_port_id="96"/>
+		<IR id="104" name="Relu_39" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw6.conv_dw.weight" out_port_id="dw6.conv_dw.weight"/>
+		<IR id="130" name="41104113_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw5_5.conv_dw.weight" out_port_id="dw5_5.conv_dw.weight"/>
+		<IR id="110" name="41024105_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw2_1.conv_dw.weight" out_port_id="dw2_1.conv_dw.weight"/>
+		<IR id="10" name="41184121_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw5_1.conv_sep.weight" out_port_id="dw5_1.conv_sep.weight"/>
+		<IR id="75" name="onnx_initializer_node_dw5_1.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="81" out_port_id="81"/>
+		<IR id="68" name="Conv_24" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="70" out_port_id="70"/>
+		<IR id="39" name="Relu_13" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="64" out_port_id="64"/>
+		<IR id="24" name="Relu_7" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw4_2.conv_sep.weight" out_port_id="dw4_2.conv_sep.weight"/>
+		<IR id="65" name="onnx_initializer_node_dw4_2.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="86" out_port_id="86"/>
+		<IR id="79" name="Relu_29" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="57" out_port_id="57"/>
+		<IR id="8" name="Conv_0" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="73" out_port_id="73"/>
+		<IR id="48" name="Conv_16" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="Gemm_61" out_port_id="0"/>
+		<IR id="147" name="Gemm_61" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="118" out_port_id="118"/>
+		<IR id="142" name="Reshape_60/Cast_14265_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="69" out_port_id="69"/>
+		<IR id="38" name="Conv_12" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_4.conv_sep.weight" out_port_id="dw5_4.conv_sep.weight"/>
+		<IR id="105" name="onnx_initializer_node_dw5_4.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="62" out_port_id="62"/>
+		<IR id="19" name="Relu_5" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="59" out_port_id="59"/>
+		<IR id="13" name="Conv_2" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="79" out_port_id="79"/>
+		<IR id="63" name="Conv_22" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw2_2.conv_dw.weight" out_port_id="dw2_2.conv_dw.weight"/>
+		<IR id="20" name="41304133_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="88" out_port_id="88"/>
+		<IR id="84" name="Relu_31" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="109" out_port_id="109"/>
+		<IR id="138" name="Conv_52" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="83" out_port_id="83"/>
+		<IR id="73" name="Conv_26" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_6.conv_sep.weight" out_port_id="dw5_6.conv_sep.weight"/>
+		<IR id="125" name="onnx_initializer_node_dw5_6.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="fc.weight" out_port_id="fc.weight"/>
+		<IR id="144" name="onnx_initializer_node_fc.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="102" out_port_id="102"/>
+		<IR id="119" name="Relu_45" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="97" out_port_id="97"/>
+		<IR id="108" name="Conv_40" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="106" out_port_id="106"/>
+		<IR id="129" name="Relu_49" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="82" out_port_id="82"/>
+		<IR id="69" name="Relu_25" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="85" out_port_id="85"/>
+		<IR id="78" name="Conv_28" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw5_3.conv_dw.weight" out_port_id="dw5_3.conv_dw.weight"/>
+		<IR id="90" name="41224125_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="101" out_port_id="101"/>
+		<IR id="118" name="Conv_44" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="84" out_port_id="84"/>
+		<IR id="74" name="Relu_27" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw4_1.conv_sep.weight" out_port_id="dw4_1.conv_sep.weight"/>
+		<IR id="55" name="onnx_initializer_node_dw4_1.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw2_2.conv_sep.weight" out_port_id="dw2_2.conv_sep.weight"/>
+		<IR id="25" name="onnx_initializer_node_dw2_2.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="72" out_port_id="72"/>
+		<IR id="44" name="Relu_15" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="68" out_port_id="68"/>
+		<IR id="34" name="Relu_11" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="dw4_1.conv_dw.weight" out_port_id="dw4_1.conv_dw.weight"/>
+		<IR id="50" name="40944097_const" out_port_id="1"/>
+	</map>
+	<map>
+		<framework name="65" out_port_id="65"/>
+		<IR id="28" name="Conv_8" out_port_id="2"/>
+	</map>
+	<map>
+		<framework name="dw6.conv_sep.weight" out_port_id="dw6.conv_sep.weight"/>
+		<IR id="135" name="onnx_initializer_node_dw6.conv_sep.weight/Output_0/Data__const" out_port_id="1"/>
+	</map>
+</mapping>
