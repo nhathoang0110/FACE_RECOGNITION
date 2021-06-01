@@ -41,7 +41,6 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     color=(0,0,255)
     list_track=collections.defaultdict(list)
     list_checkin=[]
-    string=""
     nhanvien_ok=collections.defaultdict(list)
     scale=0
     while(True):
