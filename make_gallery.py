@@ -43,6 +43,6 @@ if __name__ == '__main__':
     path_vectori="model_vectori/face_v2_16.xml"
     folder_nhanvienup="data_nvup/"
     folder_database="database/"  # chua images va vectors
-    name="hoa"
+    name="tien"
     make_gallery(name,path_vectori,path_detection,folder_nhanvienup,folder_database)
 

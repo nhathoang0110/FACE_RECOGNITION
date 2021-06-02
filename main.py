@@ -70,7 +70,6 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
             predict,dead_track=tracker.update(np.array(det_track))
             if(len(dead_track)>0):
                 dead_track.sort()
-                check_flag=True
                 for id_dead in dead_track:                 
                     if(len(ids)==0 or id_dead>=max(ids)):
                         break
@@ -80,7 +79,11 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
                     id_name=matching_model.matching(list_vector)
                     img=list_track[id_dead+1][15][0]
                     xmin,ymin,xmax,ymax=list_track[id_dead+1][15][2:6]
-                    cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])              
+                    if(flag==0):
+                        if not os.path.exists("image_to_debug/"+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg"):
+                            cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])   
+                    else: 
+                        cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])              
                     list_checkin.append(id_name)
                     now = datetime.datetime.now()
                     time_checkin= '{}:{}:{}'.format(now.hour,now.minute,now.second)
@@ -142,7 +145,8 @@ if __name__ == '__main__':
     path_to_headpose="model_headpose/"
     flag=0 # 0 is morning 1 is afternoon
     type_cam=0  # 0 is front, 1 is high camera
-    run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
+    run(0,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
+    run(1,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
 
 
     # def job():
