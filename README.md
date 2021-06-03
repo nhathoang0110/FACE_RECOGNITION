@@ -6,7 +6,7 @@
 
 +) Trong code: 
 
-    +) "image_to_debug": CẦN TẠO: Là tên folder  chứa ảnh nhân viên được checkin để debug. mỗi ngày sẽ có 1 folder, mỗi nhân viên sẽ có 1 ảnh. Chỉ cần tạo folder này, còn việc sinh ra folder mỗi ngày là tự động. Tên ảnh sẽ có dạng name_flag, trong đó flag=0 là sáng, còn bằng 1 là chiều. (ví dụ hoang_0.jpg)
+    +) "image_to_debug": CẦN TẠO: Là tên folder  chứa ảnh người lạ để debug. mỗi ngày sẽ có 1 folder, mỗi người lạ sẽ có 1 ảnh. Chỉ cần tạo folder này, còn việc sinh ra folder mỗi ngày là tự động. Tên ảnh sẽ có dạng datatime_random_flag, trong đó flag=0 là sáng, còn bằng 1 là chiều. (ví dụ 1:30:7_1_0.jpg)
 
     +) "video_test.mp4" là tên video để test, nếu camera thì thay bằng camera
 

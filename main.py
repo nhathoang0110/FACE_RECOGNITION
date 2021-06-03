@@ -18,7 +18,7 @@ import os
 
 def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector):
     time_now=datetime.datetime.now()
-    day_now= str(time_now.day)+"_"+str(time_now.month)
+    day_now= str(time_now.day)+"_"+str(time_now.month)+"_"+str(time_now.year)
     if not os.path.exists("image_to_debug/"+day_now):
         os.makedirs("image_to_debug/"+day_now)
     if not os.path.exists("results/"+day_now):
@@ -30,11 +30,10 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     vectori= Vectorization(path_vectori)
     gallery,gallery_id=vectori.build_gallery(folder_vector)
     matching_model= Matching(type_cam,0.4,0.44,0.6,gallery,gallery_id)
-    #cap=cv2.VideoCapture("video_test.mp4")
-    cap = cv2.VideoCapture(0)
+    cap=cv2.VideoCapture("video_test.mp4")
+    #cap = cv2.VideoCapture(0)
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('output.avi', fourcc, 20.0, (480,640))
-    frame_id=[]
     ids = []
     count=0
     time_all=0
@@ -43,6 +42,7 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     list_checkin=[]
     nhanvien_ok=collections.defaultdict(list)
     scale=0
+    count_nguoila=0
     while(True):
         ret, frame = cap.read()
         if(ret):
@@ -77,13 +77,18 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
                     if(len(list_vector)<20):
                         continue
                     id_name=matching_model.matching(list_vector)
-                    img=list_track[id_dead+1][15][0]
-                    xmin,ymin,xmax,ymax=list_track[id_dead+1][15][2:6]
-                    if(flag==0):
-                        if not os.path.exists("image_to_debug/"+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg"):
-                            cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])   
-                    else: 
-                        cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])              
+                    if(id_name==-1):       
+                        count_nguoila+=1
+                        now = datetime.datetime.now()
+                        time_checkin= '{}:{}:{}'.format(now.hour,now.minute,now.second)                
+                        img=list_track[id_dead+1][15][0]
+                        xmin,ymin,xmax,ymax=list_track[id_dead+1][15][2:6]
+                        cv2.imwrite('image_to_debug/'+day_now+"/"+str(time_checkin)+"_"+str(count_nguoila)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax]) 
+                    # if(flag==0):
+                    #     if not os.path.exists("image_to_debug/"+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg"):
+                    #         cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])   
+                    # else: 
+                    #     cv2.imwrite('image_to_debug/'+day_now+"/"+str(id_name)+"_"+str(flag)+".jpg",img[ymin:ymax,xmin:xmax])              
                     list_checkin.append(id_name)
                     now = datetime.datetime.now()
                     time_checkin= '{}:{}:{}'.format(now.hour,now.minute,now.second)
@@ -146,7 +151,7 @@ if __name__ == '__main__':
     path_to_headpose="model_headpose/"
     flag=0 # 0 is morning 1 is afternoon
     type_cam=0  # 0 is front, 1 is high camera
-    run(0,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
+    run(0,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)   # chay sang
     #run(1,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
 
 

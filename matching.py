@@ -29,11 +29,11 @@ class Matching(object):
             else:
                 best.append(-1)
         b = Counter(best)
-        for i in range(len(ids)):
-            print(scores[i][0])
-            print(self.gallery_id[ids[i][0]])
-            print("\n")
-        print(b)
+        # for i in range(len(ids)):
+        #     print(scores[i][0])
+        #     print(self.gallery_id[ids[i][0]])
+        #     print("\n")
+        # print(b)
         name=b.most_common(1)[0][0]
         if(name==-1 and len(b)==2 and b.most_common(2)[1][1]>15):
             name=b.most_common(2)[1][0]
