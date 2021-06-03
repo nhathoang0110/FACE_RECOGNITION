@@ -30,8 +30,8 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     vectori= Vectorization(path_vectori)
     gallery,gallery_id=vectori.build_gallery(folder_vector)
     matching_model= Matching(type_cam,0.4,0.44,0.6,gallery,gallery_id)
-    cap=cv2.VideoCapture("video_test.mp4")
-    #cap = cv2.VideoCapture(0)
+    #cap=cv2.VideoCapture("video_test.mp4")
+    cap = cv2.VideoCapture(0)
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('output.avi', fourcc, 20.0, (480,640))
     frame_id=[]
@@ -87,7 +87,8 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
                     list_checkin.append(id_name)
                     now = datetime.datetime.now()
                     time_checkin= '{}:{}:{}'.format(now.hour,now.minute,now.second)
-                    nhanvien_ok[id_name]=time_checkin
+                    if(id_name!=-1):
+                        nhanvien_ok[id_name]=time_checkin
 
             if(len(predict>0)):
                 for i in range(len(predict)):
@@ -146,22 +147,10 @@ if __name__ == '__main__':
     flag=0 # 0 is morning 1 is afternoon
     type_cam=0  # 0 is front, 1 is high camera
     run(0,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
-    run(1,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
+    #run(1,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
 
 
-    # def job():
-    #     print("hihi")
-    #     cap = cv2.VideoCapture(0)
-    #     t1=time.time()
-    #     while(True):
-    #         ret, frame = cap.read()
-    #         cv2.imshow('frame',frame)
-    #         print(time.time()-t1)
-    #         if cv2.waitKey(1) & ((time.time()-t1)>40):
-    #             break
-    #     cap.release()
-    #     cv2.destroyAllWindows()
-    #schedule.every(3).minutes.do(job)
+    #schedule.every(3).minutes.do(job)  # test phut
     # schedule.every().day.at("04:14").do(run,flag,path_detection,path_vectori,folder_vector)
     # while True:
     #     schedule.run_pending()
