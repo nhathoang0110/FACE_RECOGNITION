@@ -30,7 +30,7 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     vectori= Vectorization(path_vectori)
     gallery,gallery_id=vectori.build_gallery(folder_vector)
     matching_model= Matching(type_cam,0.4,0.44,0.6,gallery,gallery_id)
-    cap=cv2.VideoCapture("video_test.mp4")
+    cap=cv2.VideoCapture("video_test2.mp4")
     #cap = cv2.VideoCapture(0)
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
     out = cv2.VideoWriter('output.avi', fourcc, 20.0, (480,640))
