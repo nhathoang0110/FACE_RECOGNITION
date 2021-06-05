@@ -1,8 +1,6 @@
 import cv2
 import os
 import numpy as np
-import cv2
-import time
 from openvino.inference_engine import IECore
 class Vectorization(object):
     def __init__(self, path_to_xml):

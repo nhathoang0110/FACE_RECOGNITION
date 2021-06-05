@@ -12,25 +12,12 @@
 """
 
 
-import inspect
-import os.path as osp
-import sys
 
 import cv2 as cv
 import numpy as np
-import torch
-import torch.nn as nn
-
-import utils
-
-import sys
 import os
-
 import glog as log
-import numpy as np
-
 from openvino.inference_engine import IECore
-import cv2 as cv
 
 
 class IEModel:

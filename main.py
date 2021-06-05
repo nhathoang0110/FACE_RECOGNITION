@@ -13,7 +13,6 @@ from vectorization import Vectorization
 from matching import Matching
 import datetime
 import json
-import schedule
 import os
 
 def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector):
@@ -30,10 +29,10 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
     vectori= Vectorization(path_vectori)
     gallery,gallery_id=vectori.build_gallery(folder_vector)
     matching_model= Matching(type_cam,0.4,0.44,0.6,gallery,gallery_id)
-    cap=cv2.VideoCapture("video_test2.mp4")
+    cap=cv2.VideoCapture("video_test.mp4")
     #cap = cv2.VideoCapture(0)
     fourcc = cv2.VideoWriter_fourcc(*'XVID')
-    out = cv2.VideoWriter('output.avi', fourcc, 20.0, (480,640))
+    out = cv2.VideoWriter('output.avi', fourcc, 20.0, (640,368))
     ids = []
     count=0
     time_all=0
@@ -61,7 +60,7 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
                 pose=get_poses(param_lst,dets1)
             dets=[]
             for j in range(len(dets1)):
-                if(abs(pose[j][0])<30):
+                if(abs(pose[j][0])<30 ):   #and abs(pose[j][1])<30
                     dets.append(dets1[j])
             for b in dets:
                 b = list(map(int, b))
@@ -119,7 +118,7 @@ def run(flag,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector
             count+=1
             time_all=time_all+time.time()-t1
             cv2.imshow('frame',frame)
-            frame1=cv2.resize(frame,(480,640))
+            frame1=cv2.resize(frame,(640,368))
             out.write(frame1)
         else:
             break
@@ -155,7 +154,7 @@ if __name__ == '__main__':
     #run(1,type_cam,path_detection,path_vectori,path_to_headpose,folder_vector)
 
 
-    #schedule.every(3).minutes.do(job)  # test phut
+    # schedule.every(3).minutes.do(job)  # test phut
     # schedule.every().day.at("04:14").do(run,flag,path_detection,path_vectori,folder_vector)
     # while True:
     #     schedule.run_pending()

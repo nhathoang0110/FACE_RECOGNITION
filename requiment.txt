@@ -1,0 +1,8 @@
+numpy
+collections
+datetime
+opencv-python
+sklearn
+
+
+openvino 2021.2: https://docs.openvinotoolkit.org/2021.2/index.html
